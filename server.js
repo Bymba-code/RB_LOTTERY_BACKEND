@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 const authRoutes = require("./Routes/1. Authorization")
 const lotteryRoutes = require("./Routes/2. Lottery")
 const raceRoutes = require("./Routes/3. Races")
@@ -11,6 +12,8 @@ const notificationRoutes = require("./Routes/8. Notification")
 const app = express()
 
 app.use(express.json())
+
+app.use(cors())
 
 app.use('/uploads', express.static('uploads'));
 
