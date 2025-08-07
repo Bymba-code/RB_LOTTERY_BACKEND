@@ -5,8 +5,11 @@ const CREATE_USER = require("../../Controller/7. Users/3. CREATE")
 const DELETE_USERS = require("../../Controller/7. Users/4. DELETE")
 const UPDATE_USERS = require("../../Controller/7. Users/5. UPDATE")
 const Authenticate = require("../../Middlewares/Authenticate")
+const GET_USER_ME = require("../../Controller/7. Users/6. ME")
 
 const router = express.Router()
+
+router.route("/user").get(Authenticate, GET_USER_ME)
 
 router.route("/users")
 .get(GET_ALL_USERS)
