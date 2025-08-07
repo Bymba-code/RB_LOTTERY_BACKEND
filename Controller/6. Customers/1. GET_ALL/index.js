@@ -68,6 +68,7 @@ const GET_ALL_CUSTOMERS = async (req, res) => {
             })
         }
 
+
         let maxPage;
 
         if(page && size && !lottery)
@@ -85,6 +86,8 @@ const GET_ALL_CUSTOMERS = async (req, res) => {
             maxPage = Math.ceil(total / size);
         }
 
+        
+        
 
         if(page && size)
         {
@@ -103,6 +106,7 @@ const GET_ALL_CUSTOMERS = async (req, res) => {
                 message: "Амжилттай"
             })
         }
+
        
         
 

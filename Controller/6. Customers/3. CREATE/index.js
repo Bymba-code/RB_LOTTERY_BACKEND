@@ -41,12 +41,20 @@ const CREATE_CUSTOMER = async (req, res) => {
       const ebarimtUrl = req.files['ebarimt'] ? `/uploads/${req.files['ebarimt'][0].filename}` : null;
 
 
-      if(!imageUrl || !ebarimtUrl)
+      if(!imageUrl)
       {
-        return res.status(404).json({
-            success:false,
-            data:[],
-            message: "Зурагнуудыг оруулна уу."
+        return res.status(403).json({
+          success:false,
+          data:[],
+          message: "Бүтээгдхүүний зургийг оруулна уу."
+        })
+      }
+      if(!ebarimtUrl)
+      {
+        return res.status(403).json({
+          success:false,
+          data:[],
+          message: "И-Баримтын зургийг оруулна уу."
         })
       }
 

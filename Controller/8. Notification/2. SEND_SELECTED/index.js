@@ -1,7 +1,6 @@
 const { notificationToken } = require("../../../Services/notificationToken")
 const { pushNotification } = require("../../../Services/sendNotification")
 
-
 const SEND_SELECTED_USER = async (req , res) => {
     try 
     {
